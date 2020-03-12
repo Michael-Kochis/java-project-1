@@ -1,0 +1,1 @@
+2020-03-12 08:41:55 INFO  LoggerTest:7 - Logger confirmed working.
