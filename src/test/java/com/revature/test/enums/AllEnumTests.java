@@ -1,11 +1,11 @@
-package com.revature.test.model;
+package com.revature.test.enums;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ERSReimbursementTest.class, ERSUserTest.class })
-public class AllModelTests {
+@SuiteClasses({})
+public class AllEnumTests {
 
 }
