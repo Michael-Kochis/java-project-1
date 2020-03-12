@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({})
+@SuiteClasses({ERSReimbursementStatusTest.class, ERSReimbursementTypeTest.class, ERSUserRoleTest.class })
 public class AllEnumTests {
 
 }
