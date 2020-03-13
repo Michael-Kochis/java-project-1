@@ -18,4 +18,12 @@ public enum ERSUserRole {
 		  default: return ERSUserRole.ERS_UR_EMP;
 		}
 	}
+	
+	public static String toString(ERSUserRole ersu) {
+		int x = ((int) typeToLong(ersu));
+		switch (x) {
+		case 1: return "Financial Admin";
+		default: return "Employee";
+		}
+	}
 }
