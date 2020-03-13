@@ -17,7 +17,7 @@ finance manager to log in and approve or disapprove these expense requests.
 - [x] JDBC
 - [x] Log4J
 - [x] JUnit
-- [ ] Tomcat Server
+- [x] Tomcat Server
 
 ## Dependency List
 * Java Runtime Environment, version 1.8.0 (release 241)
