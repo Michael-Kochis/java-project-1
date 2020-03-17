@@ -52,8 +52,32 @@ public class ERSUserDAO implements ERSUserDAOInterface {
 	}
 
 	public TreeSet<ERSUser> readAllUser() {
-		// TODO Auto-generated method stub
-		return null;
+		TreeSet<ERSUser> returnThis = new TreeSet<ERSUser>();
+		ERSUser temp = null;
+		long count = 0;
+		
+		try {
+			Connection testConn = JDBCConnector.getConn();
+			PreparedStatement st = testConn.prepareStatement("SELECT * FROM ERS_USERS");
+			ResultSet rs = st.executeQuery();
+			
+			while (rs.next()) {
+				temp = new ERSUser();
+		    	temp.setERSUserID(rs.getLong("ERS_USER_ID"));
+		    	temp.setERSUserName(rs.getString("ERS_USERNAME") );
+		    	temp.setERSPassword(new PHash(rs.getString("ERS_PASSWORD")) );
+		    	temp.setFirstName(rs.getString("USER_FIRST_NAME"));
+		    	temp.setLastName(rs.getString("USER_LAST_NAME"));
+		    	temp.setEmail(rs.getString("USER_EMAIL"));
+		    	temp.setUserRoleID(ERSUserRole.longToType(rs.getLong("USER_ROLE_ID")) );
+				returnThis.add(temp);  count++;
+			}
+		} catch (SQLException e) {
+			log.warn("Error reading records from ERS_Users table.", e);
+		}
+		
+		log.trace(count + " records read from ERS_Users table.");
+		return returnThis;
 	}
 
 	public ERSUser readUserByID(long ID) {
