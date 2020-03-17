@@ -109,8 +109,8 @@ public class ERSUser {
 		if (ERSPassword == null) {
 			if (other.ERSPassword != null)
 				return false;
-		} else if (!ERSPassword.equals(other.ERSPassword))
-			return false;
+		} //else if (!ERSPassword.equals(other.ERSPassword))
+			//return false;
 		if (ERSUserID != other.ERSUserID)
 			return false;
 		if (ERSUserName == null) {

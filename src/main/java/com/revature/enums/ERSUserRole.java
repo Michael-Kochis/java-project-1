@@ -3,6 +3,13 @@ package com.revature.enums;
 public enum ERSUserRole {
 	ERS_UR_EMP, ERS_UR_FIN_ADM;
 	
+	public static boolean compare(ERSUserRole left, ERSUserRole right) {
+		long a = typeToLong(left);
+		long b = typeToLong(right);
+		
+		return (a == b);
+	}
+	
 	public static long typeToLong(ERSUserRole ersu) {
 		if (ersu.equals(ERS_UR_EMP)) {
 			return 0;
